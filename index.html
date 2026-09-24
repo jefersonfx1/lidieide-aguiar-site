@@ -79,18 +79,14 @@ tailwind.config = {
   .pulse-soft { animation: softPulse 2.5s infinite; }
   .float-soft { animation: floatY 4s ease-in-out infinite; }
 
-  /* Mascot smaller, overlays intro text section */
+  /* Mascot - static, no effects, positioned higher */
   .mascote-hero {
     position: absolute;
-    bottom: -8px;
-    right: -4px;
-    width: 110px;
+    top: 12px;
+    right: 4px;
+    width: 95px;
     z-index: 15;
-    cursor: pointer;
-    touch-action: manipulation;
-    filter: drop-shadow(0 10px 20px rgba(91,44,142,0.28));
-    transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1), filter 0.3s ease;
-    animation: floatMascote 4.5s ease-in-out infinite;
+    pointer-events: none;
   }
   .mascote-hero img {
     width: 100%;
@@ -98,43 +94,44 @@ tailwind.config = {
     object-fit: contain;
     display: block;
   }
-  .mascote-hero:hover {
-    transform: scale(1.08) translateY(-4px);
-    filter: drop-shadow(0 14px 26px rgba(91,44,142,0.4));
-    animation-play-state: paused;
-  }
-  .mascote-hero.zoomed {
-    transform: scale(1.45);
-    filter: drop-shadow(0 18px 32px rgba(91,44,142,0.5));
-    animation-play-state: paused;
-    z-index: 30;
-  }
   @media (min-width: 640px) {
-    .mascote-hero { width: 140px; right: 8px; bottom: -12px; }
+    .mascote-hero { width: 120px; right: 12px; top: 16px; }
   }
   @media (min-width: 1024px) {
-    .mascote-hero { width: 170px; right: 12px; bottom: -16px; }
+    .mascote-hero { width: 150px; right: 20px; top: 20px; }
   }
 
-  /* Banner photo with overlay info */
+  /* Banner photo - full width, taller vertically */
   .hero-banner {
     position: relative;
-    border-radius: 1.5rem;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    border-radius: 0;
     overflow: hidden;
-    box-shadow: 0 16px 40px -12px rgba(91,44,142,0.25);
+    box-shadow: none;
+  }
+  @media (min-width: 1024px) {
+    .hero-banner {
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+      border-radius: 1.5rem;
+      box-shadow: 0 16px 40px -12px rgba(91,44,142,0.25);
+    }
   }
   .hero-banner img {
     width: 100%;
-    height: 220px;
+    height: 320px;
     object-fit: cover;
     object-position: top center;
     display: block;
   }
   @media (min-width: 640px) {
-    .hero-banner img { height: 280px; }
+    .hero-banner img { height: 400px; }
   }
   @media (min-width: 1024px) {
-    .hero-banner img { height: 340px; }
+    .hero-banner img { height: 480px; }
   }
   .hero-banner-overlay {
     position: absolute;
@@ -217,7 +214,7 @@ tailwind.config = {
 <div class="max-w-6xl mx-auto px-4 sm:px-6 relative">
 
   <!-- Texto de introdução com degradê + mascote pequena sobreposta -->
-  <div class="relative animate-fade-in intro-gradient rounded-3xl p-6 sm:p-8 lg:p-10 shadow-sm mb-8 pr-24 sm:pr-36">
+  <div class="relative animate-fade-in intro-gradient rounded-3xl p-6 sm:p-8 lg:p-10 shadow-sm mb-8 pr-28 sm:pr-40">
     <p class="text-primary font-medium text-sm tracking-wide uppercase mb-3">Atendimento online • Adolescentes e Adultos</p>
     <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight text-text mb-5">Descomplicando a ansiedade com acolhimento, leveza e segurança</h1>
     <p class="text-base sm:text-lg text-muted leading-relaxed mb-7 max-w-xl">Espaço terapêutico seguro para você entender o que sente, encontrar clareza e construir caminhos mais leves — com ciência e cuidado humano.</p>
@@ -225,7 +222,7 @@ tailwind.config = {
       <a href="#como-funciona" class="border-2 border-primary text-primary px-7 py-3.5 rounded-full font-medium text-center hover:bg-secondary transition">Como funciona</a>
     </div>
     <!-- Mascote pequena sobrepondo o bloco do texto -->
-    <div class="mascote-hero" id="mascoteHero" title="Toque para ampliar">
+    <div class="mascote-hero" id="mascoteHero">
       <img src="mascote.png" alt="Mascote Lidieide" draggable="false">
     </div>
   </div>
@@ -378,23 +375,6 @@ tailwind.config = {
 </footer>
 
 <script>
-(function() {
-  const mascote = document.getElementById('mascoteHero');
-  if (!mascote) return;
-  let zoomed = false;
-  mascote.addEventListener('click', function(e) {
-    e.stopPropagation();
-    zoomed = !zoomed;
-    mascote.classList.toggle('zoomed', zoomed);
-  });
-  document.addEventListener('click', function() {
-    if (zoomed) {
-      zoomed = false;
-      mascote.classList.remove('zoomed');
-    }
-  });
-})();
-
 (function() {
   const reveals = document.querySelectorAll('.reveal');
   if (!reveals.length) return;
