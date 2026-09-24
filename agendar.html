@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Agendar | Lidieide Aguiar</title>
+<meta name="description" content="Descomplicando a ansiedade com acolhimento, leveza e segurança. Atendimento online para adolescentes e adultos. CRP 01/31063."/>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        primary: '#5B2C8E',
+        secondary: '#F0E6F7',
+        accent: '#C9A0DC',
+        soft: '#FAF7FC',
+        text: '#2D1B3D',
+        muted: '#7A6A8A'
+      },
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+        serif: ['Playfair Display', 'serif']
+      }
+    }
+  }
+}
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  .gradient-bg { background: linear-gradient(135deg, #FAF7FC 0%, #F0E6F7 50%, #E8D5F0 100%); }
+  .btn-primary { transition: all .3s cubic-bezier(0.4,0,0.2,1); }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 28px -6px rgba(91,44,142,.45); }
+  .btn-primary:active { transform: translateY(0) scale(0.98); }
+  .card-hover { transition: all .35s cubic-bezier(0.4,0,0.2,1); }
+  .card-hover:hover { transform: translateY(-6px); box-shadow: 0 24px 48px -12px rgba(91,44,142,.18); }
+  .logo-bg::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url("logo.png");
+    background-repeat: no-repeat;
+    background-position: center 40%;
+    background-size: min(55vmin, 420px);
+    opacity: 0.04;
+    pointer-events: none;
+    z-index: 0;
+  }
+  body > * { position: relative; z-index: 1; }
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes softPulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(91,44,142,0.25); }
+    50% { box-shadow: 0 0 0 12px rgba(91,44,142,0); }
+  }
+  .animate-fade-in { animation: fadeInUp 0.7s ease-out both; }
+  .pulse-soft { animation: softPulse 2.5s infinite; }
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+    outline: 2px solid #5B2C8E;
+    outline-offset: 3px;
+  }
+</style>
+</head>
+<body class="font-sans text-text antialiased bg-white logo-bg">
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-purple-100">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+<a href="index.html" class="flex items-center gap-3 group">
+<img src="logo.png" alt="Logo Lidieide Aguiar" class="h-12 w-12 object-contain transition group-hover:scale-105">
+<div class="leading-tight">
+<p class="font-serif font-semibold text-lg text-primary group-hover:opacity-80 transition">Lidieide Aguiar</p>
+<p class="text-xs text-muted">Psicóloga Clínica • CRP 01/31063</p>
+</div>
+</a>
+<a href="agendar.html" class="btn-primary bg-primary text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-[#4A2275]">Agendar agora</a>
+</div>
+</header>
+
+<section class="gradient-bg pt-28 pb-16">
+<div class="max-w-3xl mx-auto px-4 sm:px-6 animate-fade-in">
+<a href="index.html" class="text-sm text-primary mb-6 inline-block hover:underline transition">← Voltar para a home</a>
+<h1 class="font-serif text-3xl sm:text-4xl font-semibold text-text mb-3">Agendar agora</h1>
+<p class="text-muted mb-10">Escolha a forma que preferir para marcar sua avaliação.</p>
+
+<div class="bg-white/95 backdrop-blur rounded-3xl p-6 sm:p-8 shadow-sm border border-purple-50 mb-8 card-hover">
+<h2 class="font-semibold text-lg text-primary mb-2">Google Agenda</h2>
+<p class="text-sm text-muted mb-6">Quando a integração estiver ativa, você poderá ver os horários disponíveis e agendar diretamente aqui.</p>
+<div class="bg-secondary rounded-2xl p-8 border-2 border-dashed border-accent text-center">
+<p class="text-4xl mb-3">📅</p>
+<p class="text-muted text-sm mb-2 font-medium">Área do Google Calendar</p>
+<p class="text-xs text-muted mb-4">Conecte sua conta Google Calendar ou use Calendly / Google Appointment Schedule.</p>
+<p class="text-xs text-muted">Enquanto isso, use o WhatsApp ou o formulário abaixo.</p>
+</div>
+</div>
+
+<div class="bg-white/95 backdrop-blur rounded-3xl p-6 sm:p-8 shadow-sm border border-purple-50 mb-8 card-hover">
+<h2 class="font-semibold text-lg text-primary mb-4">Falar no WhatsApp</h2>
+<p class="text-sm text-muted mb-4">A forma mais rápida de agendar.</p>
+<a href="https://wa.me/5561995581985?text=Olá!%20Gostaria%20de%20agendar%20uma%20avaliação." target="_blank" class="btn-primary inline-flex items-center gap-2 bg-green-600 text-white px-6 py-3.5 rounded-full font-medium hover:bg-green-700">Falar no WhatsApp</a>
+</div>
+
+<div class="bg-white/95 backdrop-blur rounded-3xl p-6 sm:p-8 shadow-sm border border-purple-50">
+<h2 class="font-semibold text-lg text-primary mb-4">Solicitar agendamento</h2>
+<form id="booking-form" class="space-y-4">
+<div><label class="block text-sm font-medium mb-1 text-text">Nome completo</label><input type="text" name="nome" required class="w-full px-4 py-3 rounded-xl border border-purple-100 focus:outline-none focus:ring-2 focus:ring-primary/40 transition" placeholder="Seu nome"></div>
+<div><label class="block text-sm font-medium mb-1 text-text">WhatsApp</label><input type="tel" name="whatsapp" required class="w-full px-4 py-3 rounded-xl border border-purple-100 focus:outline-none focus:ring-2 focus:ring-primary/40 transition" placeholder="(61) 99999-9999"></div>
+<div><label class="block text-sm font-medium mb-1 text-text">Melhor horário</label><select name="horario" class="w-full px-4 py-3 rounded-xl border border-purple-100 focus:outline-none focus:ring-2 focus:ring-primary/40 transition"><option>Manhã</option><option>Tarde</option><option>Noite</option></select></div>
+<div><label class="block text-sm font-medium mb-1 text-text">Breve motivo (opcional)</label><textarea name="motivo" rows="3" class="w-full px-4 py-3 rounded-xl border border-purple-100 focus:outline-none focus:ring-2 focus:ring-primary/40 transition" placeholder="Ex: ansiedade..."></textarea></div>
+<button type="submit" class="btn-primary w-full bg-primary text-white py-3.5 rounded-xl font-medium">Solicitar agendamento</button>
+</form>
+</div>
+<p class="text-center text-sm text-muted mt-8">Também pode ir para a <a href="checkout.html" class="text-primary underline hover:opacity-80">área de pagamento</a>.</p>
+</div>
+</section>
+<footer class="bg-primary text-white py-12">
+<div class="max-w-6xl mx-auto px-4 sm:px-6">
+<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
+<div class="flex items-start gap-3">
+<img src="logo.png" alt="Logo" class="h-14 w-14 object-contain brightness-0 invert opacity-90">
+<div>
+<p class="font-serif font-semibold text-lg mb-1">Lidieide Aguiar</p>
+<p class="text-sm text-purple-200">Psicóloga Clínica • Neuropsicologia</p>
+<p class="text-sm text-purple-200 mt-1">CRP 01/31063</p>
+</div>
+</div>
+<div>
+<p class="font-medium mb-2">Contato</p>
+<a href="https://wa.me/5561995581985" target="_blank" class="text-sm text-purple-100 hover:text-white block transition">WhatsApp: (61) 99558-1985</a>
+<a href="https://www.instagram.com/lidieideaguiar" target="_blank" class="text-sm text-purple-100 hover:text-white block mt-1 transition">@lidieideaguiar</a>
+</div>
+<div>
+<p class="font-medium mb-2">Atendimento</p>
+<p class="text-sm text-purple-200">Online • Adolescentes e Adultos</p>
+<p class="text-sm text-purple-200 mt-1">Foco em ansiedade e acolhimento</p>
+</div>
+</div>
+<div class="border-t border-purple-700 pt-6 text-center text-sm text-purple-300">© 2026 Lidieide Aguiar. Todos os direitos reservados.</div>
+</div>
+</footer>
+
+<script>
+document.getElementById('booking-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  var nome = this.nome.value;
+  var whatsapp = this.whatsapp.value;
+  var horario = this.horario.value;
+  var motivo = this.motivo.value || 'Não informado';
+  var msg = 'Olá! Gostaria de agendar uma avaliação.%0A%0A*Nome:* ' + nome + '%0A*WhatsApp:* ' + whatsapp + '%0A*Melhor horário:* ' + horario + '%0A*Motivo:* ' + motivo;
+  window.open('https://wa.me/5561995581985?text=' + msg, '_blank');
+});
+</script>
+</body></html>
