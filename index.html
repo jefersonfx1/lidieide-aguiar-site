@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lidieide Aguiar | Psicóloga Clínica • Neuropsicologia</title>
   <meta name="description" content="Descomplicando a ansiedade com acolhimento, leveza e segurança. Atendimento online para adolescentes e adultos. CRP 01/31063." />
+  <link rel="icon" type="image/png" href="logo.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,12 +15,12 @@
       theme: {
         extend: {
           colors: {
-            primary: '#5B2C8E',      /* Roxo escuro */
-            secondary: '#F0E6F7',    /* Lilás bem claro */
-            accent: '#C9A0DC',       /* Lilás */
-            soft: '#FAF7FC',         /* Quase branco com toque lilás */
-            text: '#2D1B3D',         /* Roxo bem escuro para texto */
-            muted: '#7A6A8A'         /* Lilás acinzentado */
+            primary: '#5B2C8E',
+            secondary: '#F0E6F7',
+            accent: '#C9A0DC',
+            soft: '#FAF7FC',
+            text: '#2D1B3D',
+            muted: '#7A6A8A'
           },
           fontFamily: {
             sans: ['Inter', 'sans-serif'],
@@ -35,21 +36,23 @@
     .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 25px -5px rgba(91, 44, 142, 0.4); }
     .card-hover { transition: all 0.3s ease; }
     .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -10px rgba(91, 44, 142, 0.15); }
-    .img-cover { object-fit: cover; }
   </style>
 </head>
 <body class="font-sans text-text antialiased bg-white">
 
-  <!-- Header -->
-  <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-purple-100">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
-      <div class="flex items-center gap-2">
-        <span class="text-2xl">🧠</span>
-        <div>
-          <p class="font-serif font-semibold text-lg leading-tight text-primary">Lidieide Aguiar</p>
+  <!-- Header com Logotipo -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-purple-100">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3 group">
+        <img src="logo.png" alt="Logo Lidieide Aguiar" class="h-12 w-12 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="hidden items-center gap-2" style="display:none;">
+          <span class="text-3xl text-primary font-serif font-bold">LA</span>
+        </div>
+        <div class="leading-tight">
+          <p class="font-serif font-semibold text-lg text-primary group-hover:opacity-80 transition">Lidieide Aguiar</p>
           <p class="text-xs text-muted">Psicóloga Clínica • CRP 01/31063</p>
         </div>
-      </div>
+      </a>
       <a href="https://wa.me/5561995581985?text=Olá!%20Gostaria%20de%20agendar%20uma%20avaliação." target="_blank"
          class="btn-primary bg-primary text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-[#4A2275]">
         Agendar agora
@@ -93,7 +96,6 @@
         </div>
       </div>
 
-      <!-- Stats -->
       <div class="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-6">
         <div class="bg-white rounded-2xl p-5 shadow-sm border border-purple-50">
           <p class="text-2xl font-semibold text-primary">Online</p>
@@ -150,12 +152,15 @@
               <span>Abordagem com acolhimento, leveza e segurança</span>
             </li>
           </ul>
-          <div class="bg-secondary rounded-2xl p-6 border border-accent/30">
-            <p class="text-sm font-medium text-primary mb-1">Psicóloga Clínica | Palestrante</p>
-            <h3 class="font-serif text-xl font-semibold mb-2 text-text">Lidieide Aguiar</h3>
-            <p class="text-muted text-sm leading-relaxed">
-              CRP 01/31063. Trabalho com seriedade, acolhimento e compromisso com o processo psicoterapêutico, respeitando a singularidade de cada pessoa.
-            </p>
+          <div class="bg-secondary rounded-2xl p-6 border border-accent/30 flex items-center gap-4">
+            <img src="logo.png" alt="Logo" class="h-16 w-16 object-contain flex-shrink-0" onerror="this.style.display='none'">
+            <div>
+              <p class="text-sm font-medium text-primary mb-1">Psicóloga Clínica | Palestrante</p>
+              <h3 class="font-serif text-xl font-semibold mb-1 text-text">Lidieide Aguiar</h3>
+              <p class="text-muted text-sm leading-relaxed">
+                CRP 01/31063. Trabalho com seriedade, acolhimento e compromisso com o processo psicoterapêutico.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -172,7 +177,7 @@
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-sm border border-purple-50">
-          <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=500&q=80" alt="Ansiedade e regulação" class="w-full h-44 object-cover">
+          <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=500&q=80" alt="Ansiedade" class="w-full h-44 object-cover">
           <div class="p-6">
             <h3 class="font-semibold text-lg mb-2 text-primary">Ansiedade</h3>
             <p class="text-muted text-sm leading-relaxed">Entender os gatilhos, regular o sistema nervoso e desenvolver ferramentas práticas para o dia a dia.</p>
@@ -281,7 +286,7 @@
     </div>
   </section>
 
-  <!-- Galeria / Ambiente -->
+  <!-- Galeria -->
   <section class="py-16 bg-white">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="text-center mb-10">
@@ -305,7 +310,7 @@
     </div>
   </section>
 
-  <!-- Agendamento + Google Calendar placeholder -->
+  <!-- Agendamento -->
   <section id="agendar" class="py-20 bg-soft">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="grid lg:grid-cols-2 gap-12 items-start">
@@ -363,7 +368,7 @@
     </div>
   </section>
 
-  <!-- Checkout Front -->
+  <!-- Checkout -->
   <section id="checkout" class="py-20 bg-white">
     <div class="max-w-3xl mx-auto px-4 sm:px-6">
       <div class="text-center mb-10">
@@ -403,7 +408,7 @@
               </div>
             </div>
             <p class="text-xs text-muted bg-white p-3 rounded-lg border border-purple-50">
-              🔒 Campos desabilitados no momento. Quando o gateway for conectado (Stripe, Mercado Pago etc.), este formulário processará o pagamento de forma segura.
+              🔒 Campos desabilitados no momento. Quando o gateway for conectado, este formulário processará o pagamento de forma segura.
             </p>
             <button type="button" class="w-full bg-gray-200 text-gray-500 py-3.5 rounded-xl font-medium cursor-not-allowed" disabled>
               Pagar agora (integração pendente)
@@ -418,7 +423,7 @@
   <section class="py-20 bg-soft">
     <div class="max-w-3xl mx-auto px-4 sm:px-6">
       <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-center mb-12 text-text">Perguntas frequentes</h2>
-      <div class="space-y-4" id="faq">
+      <div class="space-y-4">
         <details class="group bg-white rounded-2xl p-5 shadow-sm border border-purple-50">
           <summary class="font-medium cursor-pointer list-none flex justify-between items-center text-text">
             A primeira conversa é cobrada?
@@ -461,6 +466,7 @@
   <!-- CTA final -->
   <section class="py-20 gradient-bg">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+      <img src="logo.png" alt="Logo Lidieide Aguiar" class="h-20 w-20 mx-auto mb-6 object-contain" onerror="this.style.display='none'">
       <h2 class="font-serif text-3xl sm:text-4xl font-semibold mb-4 text-text">Vamos cuidar disso juntos?</h2>
       <p class="text-muted mb-8">Agende sua avaliação e tire suas dúvidas com quem entende de ansiedade e acolhimento.</p>
       <a href="https://wa.me/5561995581985?text=Olá!%20Gostaria%20de%20agendar%20uma%20avaliação." target="_blank"
@@ -474,10 +480,13 @@
   <footer class="bg-primary text-white py-12">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
-        <div>
-          <p class="font-serif font-semibold text-lg mb-2">Lidieide Aguiar</p>
-          <p class="text-sm text-purple-200">Psicóloga Clínica • Neuropsicologia</p>
-          <p class="text-sm text-purple-200 mt-1">CRP 01/31063</p>
+        <div class="flex items-start gap-3">
+          <img src="logo.png" alt="Logo" class="h-14 w-14 object-contain brightness-0 invert opacity-90" onerror="this.style.display='none'">
+          <div>
+            <p class="font-serif font-semibold text-lg mb-1">Lidieide Aguiar</p>
+            <p class="text-sm text-purple-200">Psicóloga Clínica • Neuropsicologia</p>
+            <p class="text-sm text-purple-200 mt-1">CRP 01/31063</p>
+          </div>
         </div>
         <div>
           <p class="font-medium mb-2">Contato</p>
