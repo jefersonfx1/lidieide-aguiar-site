@@ -79,12 +79,13 @@ tailwind.config = {
   .pulse-soft { animation: softPulse 2.5s infinite; }
   .float-soft { animation: floatY 4s ease-in-out infinite; }
 
-  /* Mascot - static, no effects, positioned higher */
+  /* Mascot - static, centered, no effects */
   .mascote-hero {
     position: absolute;
-    top: 12px;
-    right: 4px;
-    width: 95px;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
     z-index: 15;
     pointer-events: none;
   }
@@ -95,13 +96,13 @@ tailwind.config = {
     display: block;
   }
   @media (min-width: 640px) {
-    .mascote-hero { width: 120px; right: 12px; top: 16px; }
+    .mascote-hero { width: 130px; top: 12px; }
   }
   @media (min-width: 1024px) {
-    .mascote-hero { width: 150px; right: 20px; top: 20px; }
+    .mascote-hero { width: 160px; top: 16px; }
   }
 
-  /* Banner photo - full width, taller vertically */
+  /* Banner photo - full width on all screens, taller */
   .hero-banner {
     position: relative;
     width: 100vw;
@@ -111,15 +112,6 @@ tailwind.config = {
     overflow: hidden;
     box-shadow: none;
   }
-  @media (min-width: 1024px) {
-    .hero-banner {
-      width: 100%;
-      margin-left: 0;
-      margin-right: 0;
-      border-radius: 1.5rem;
-      box-shadow: 0 16px 40px -12px rgba(91,44,142,0.25);
-    }
-  }
   .hero-banner img {
     width: 100%;
     height: 320px;
@@ -128,10 +120,10 @@ tailwind.config = {
     display: block;
   }
   @media (min-width: 640px) {
-    .hero-banner img { height: 400px; }
+    .hero-banner img { height: 420px; }
   }
   @media (min-width: 1024px) {
-    .hero-banner img { height: 480px; }
+    .hero-banner img { height: 520px; }
   }
   .hero-banner-overlay {
     position: absolute;
@@ -213,21 +205,21 @@ tailwind.config = {
 
 <div class="max-w-6xl mx-auto px-4 sm:px-6 relative">
 
-  <!-- Texto de introdução com degradê + mascote pequena sobreposta -->
-  <div class="relative animate-fade-in intro-gradient rounded-3xl p-6 sm:p-8 lg:p-10 shadow-sm mb-8 pr-28 sm:pr-40">
+  <!-- Texto de introdução com degradê + mascote centralizada no topo -->
+  <div class="relative animate-fade-in intro-gradient rounded-3xl pt-36 sm:pt-44 lg:pt-48 px-6 sm:px-8 lg:px-10 pb-6 sm:pb-8 lg:pb-10 shadow-sm mb-8">
     <p class="text-primary font-medium text-sm tracking-wide uppercase mb-3">Atendimento online • Adolescentes e Adultos</p>
     <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight text-text mb-5">Descomplicando a ansiedade com acolhimento, leveza e segurança</h1>
     <p class="text-base sm:text-lg text-muted leading-relaxed mb-7 max-w-xl">Espaço terapêutico seguro para você entender o que sente, encontrar clareza e construir caminhos mais leves — com ciência e cuidado humano.</p>
     <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
       <a href="#como-funciona" class="border-2 border-primary text-primary px-7 py-3.5 rounded-full font-medium text-center hover:bg-secondary transition">Como funciona</a>
     </div>
-    <!-- Mascote pequena sobrepondo o bloco do texto -->
+    <!-- Mascote centralizada no topo do bloco -->
     <div class="mascote-hero" id="mascoteHero">
       <img src="mascote.png" alt="Mascote Lidieide" draggable="false">
     </div>
   </div>
 
-  <!-- Faixa / banner com foto lidieide-home + info sobreposta -->
+  <!-- Faixa / banner full-width com foto lidieide-home + info sobreposta -->
   <div class="hero-banner animate-fade-in animate-delay-1 mb-10">
     <img src="lidieide-home.png" alt="Lidieide Aguiar - Psicóloga" loading="eager">
     <div class="hero-banner-overlay">
