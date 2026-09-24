@@ -14,12 +14,12 @@
       theme: {
         extend: {
           colors: {
-            primary: '#5B7C99',
-            secondary: '#E8F0F5',
-            accent: '#A8C5D4',
-            soft: '#F7F9FB',
-            text: '#2C3E50',
-            muted: '#6B7C8A'
+            primary: '#5B2C8E',      /* Roxo escuro */
+            secondary: '#F0E6F7',    /* Lilás bem claro */
+            accent: '#C9A0DC',       /* Lilás */
+            soft: '#FAF7FC',         /* Quase branco com toque lilás */
+            text: '#2D1B3D',         /* Roxo bem escuro para texto */
+            muted: '#7A6A8A'         /* Lilás acinzentado */
           },
           fontFamily: {
             sans: ['Inter', 'sans-serif'],
@@ -30,28 +30,28 @@
     }
   </script>
   <style>
-    .gradient-bg { background: linear-gradient(135deg, #F7F9FB 0%, #E8F0F5 100%); }
+    .gradient-bg { background: linear-gradient(135deg, #FAF7FC 0%, #F0E6F7 50%, #E8D5F0 100%); }
     .btn-primary { transition: all 0.3s ease; }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 25px -5px rgba(91, 124, 153, 0.4); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 25px -5px rgba(91, 44, 142, 0.4); }
     .card-hover { transition: all 0.3s ease; }
-    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -10px rgba(0,0,0,0.1); }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -10px rgba(91, 44, 142, 0.15); }
     .img-cover { object-fit: cover; }
   </style>
 </head>
 <body class="font-sans text-text antialiased bg-white">
 
   <!-- Header -->
-  <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-purple-100">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
       <div class="flex items-center gap-2">
         <span class="text-2xl">🧠</span>
         <div>
-          <p class="font-serif font-semibold text-lg leading-tight">Lidieide Aguiar</p>
+          <p class="font-serif font-semibold text-lg leading-tight text-primary">Lidieide Aguiar</p>
           <p class="text-xs text-muted">Psicóloga Clínica • CRP 01/31063</p>
         </div>
       </div>
       <a href="https://wa.me/5561995581985?text=Olá!%20Gostaria%20de%20agendar%20uma%20avaliação." target="_blank"
-         class="btn-primary bg-primary text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-[#4A6A85]">
+         class="btn-primary bg-primary text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-[#4A2275]">
         Agendar agora
       </a>
     </div>
@@ -74,19 +74,19 @@
                class="btn-primary bg-primary text-white px-8 py-4 rounded-full font-medium text-center">
               Agendar agora
             </a>
-            <a href="#como-funciona" class="border border-primary text-primary px-8 py-4 rounded-full font-medium text-center hover:bg-secondary transition">
+            <a href="#como-funciona" class="border-2 border-primary text-primary px-8 py-4 rounded-full font-medium text-center hover:bg-secondary transition">
               Como funciona
             </a>
           </div>
         </div>
         <div class="relative">
-          <div class="rounded-3xl overflow-hidden shadow-xl">
+          <div class="rounded-3xl overflow-hidden shadow-xl ring-4 ring-accent/30">
             <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&q=80" 
                  alt="Ambiente acolhedor de terapia" 
                  class="w-full h-80 sm:h-96 object-cover"
                  loading="eager">
           </div>
-          <div class="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow-lg p-4 hidden sm:block">
+          <div class="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow-lg p-4 hidden sm:block border border-accent/40">
             <p class="text-sm font-medium text-primary">Acolhimento + Ciência</p>
             <p class="text-xs text-muted">CRP 01/31063</p>
           </div>
@@ -95,19 +95,19 @@
 
       <!-- Stats -->
       <div class="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-6">
-        <div class="bg-white rounded-2xl p-5 shadow-sm">
+        <div class="bg-white rounded-2xl p-5 shadow-sm border border-purple-50">
           <p class="text-2xl font-semibold text-primary">Online</p>
           <p class="text-sm text-muted mt-1">Atendimento seguro</p>
         </div>
-        <div class="bg-white rounded-2xl p-5 shadow-sm">
+        <div class="bg-white rounded-2xl p-5 shadow-sm border border-purple-50">
           <p class="text-2xl font-semibold text-primary">Acolhimento</p>
           <p class="text-sm text-muted mt-1">Sem julgamento</p>
         </div>
-        <div class="bg-white rounded-2xl p-5 shadow-sm">
+        <div class="bg-white rounded-2xl p-5 shadow-sm border border-purple-50">
           <p class="text-2xl font-semibold text-primary">Ciência</p>
           <p class="text-sm text-muted mt-1">Baseada em evidências</p>
         </div>
-        <div class="bg-white rounded-2xl p-5 shadow-sm">
+        <div class="bg-white rounded-2xl p-5 shadow-sm border border-purple-50">
           <p class="text-2xl font-semibold text-primary">Leveza</p>
           <p class="text-sm text-muted mt-1">Processo humanizado</p>
         </div>
@@ -120,7 +120,7 @@
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="grid lg:grid-cols-2 gap-12 items-center">
         <div class="order-2 lg:order-1">
-          <div class="rounded-3xl overflow-hidden shadow-lg">
+          <div class="rounded-3xl overflow-hidden shadow-lg ring-4 ring-accent/20">
             <img src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=700&q=80" 
                  alt="Momento de escuta e acolhimento" 
                  class="w-full h-80 sm:h-96 object-cover"
@@ -128,31 +128,31 @@
           </div>
         </div>
         <div class="order-1 lg:order-2">
-          <h2 class="font-serif text-3xl sm:text-4xl font-semibold mb-6">Atendimento explicado antes de começar</h2>
+          <h2 class="font-serif text-3xl sm:text-4xl font-semibold mb-6 text-text">Atendimento explicado antes de começar</h2>
           <p class="text-muted leading-relaxed mb-6">
             Na primeira conversa você entende o que está acontecendo, quais caminhos são possíveis e como o processo terapêutico funciona. Nada de pressão — só clareza e acolhimento.
           </p>
           <ul class="space-y-3 text-muted mb-8">
             <li class="flex items-start gap-3">
-              <span class="text-primary mt-1">✓</span>
+              <span class="text-primary mt-1 font-bold">✓</span>
               <span>Avaliação inicial sem compromisso</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-primary mt-1">✓</span>
+              <span class="text-primary mt-1 font-bold">✓</span>
               <span>Atendimento 100% online (adolescentes e adultos)</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-primary mt-1">✓</span>
+              <span class="text-primary mt-1 font-bold">✓</span>
               <span>Foco em ansiedade, regulação emocional e autoconhecimento</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-primary mt-1">✓</span>
+              <span class="text-primary mt-1 font-bold">✓</span>
               <span>Abordagem com acolhimento, leveza e segurança</span>
             </li>
           </ul>
-          <div class="bg-secondary rounded-2xl p-6">
+          <div class="bg-secondary rounded-2xl p-6 border border-accent/30">
             <p class="text-sm font-medium text-primary mb-1">Psicóloga Clínica | Palestrante</p>
-            <h3 class="font-serif text-xl font-semibold mb-2">Lidieide Aguiar</h3>
+            <h3 class="font-serif text-xl font-semibold mb-2 text-text">Lidieide Aguiar</h3>
             <p class="text-muted text-sm leading-relaxed">
               CRP 01/31063. Trabalho com seriedade, acolhimento e compromisso com o processo psicoterapêutico, respeitando a singularidade de cada pessoa.
             </p>
@@ -166,50 +166,50 @@
   <section class="py-20 bg-soft">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="text-center max-w-2xl mx-auto mb-14">
-        <h2 class="font-serif text-3xl sm:text-4xl font-semibold mb-4">O que atendemos</h2>
+        <h2 class="font-serif text-3xl sm:text-4xl font-semibold mb-4 text-text">O que atendemos</h2>
         <p class="text-muted">Cada processo começa pela escuta. Depois, juntos, construímos o caminho que faz sentido para você.</p>
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-sm">
+        <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-sm border border-purple-50">
           <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=500&q=80" alt="Ansiedade e regulação" class="w-full h-44 object-cover">
           <div class="p-6">
-            <h3 class="font-semibold text-lg mb-2">Ansiedade</h3>
+            <h3 class="font-semibold text-lg mb-2 text-primary">Ansiedade</h3>
             <p class="text-muted text-sm leading-relaxed">Entender os gatilhos, regular o sistema nervoso e desenvolver ferramentas práticas para o dia a dia.</p>
           </div>
         </div>
-        <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-sm">
+        <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-sm border border-purple-50">
           <img src="https://images.unsplash.com/photo-1518241353330-0f7941e1d4c5?w=500&q=80" alt="Acolhimento emocional" class="w-full h-44 object-cover">
           <div class="p-6">
-            <h3 class="font-semibold text-lg mb-2">Acolhimento emocional</h3>
+            <h3 class="font-semibold text-lg mb-2 text-primary">Acolhimento emocional</h3>
             <p class="text-muted text-sm leading-relaxed">Espaço seguro para falar do que dói, sem julgamento, com escuta ativa e presença genuína.</p>
           </div>
         </div>
-        <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-sm">
+        <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-sm border border-purple-50">
           <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=500&q=80" alt="Neuropsicologia" class="w-full h-44 object-cover">
           <div class="p-6">
-            <h3 class="font-semibold text-lg mb-2">Neuropsicologia</h3>
+            <h3 class="font-semibold text-lg mb-2 text-primary">Neuropsicologia</h3>
             <p class="text-muted text-sm leading-relaxed">Compreensão do funcionamento cognitivo e emocional para um acompanhamento mais preciso.</p>
           </div>
         </div>
-        <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-sm">
+        <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-sm border border-purple-50">
           <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=500&q=80" alt="Adolescentes" class="w-full h-44 object-cover">
           <div class="p-6">
-            <h3 class="font-semibold text-lg mb-2">Adolescentes</h3>
+            <h3 class="font-semibold text-lg mb-2 text-primary">Adolescentes</h3>
             <p class="text-muted text-sm leading-relaxed">Apoio em questões de identidade, pressão, ansiedade e relações — de forma leve e respeitosa.</p>
           </div>
         </div>
-        <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-sm">
+        <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-sm border border-purple-50">
           <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=500&q=80" alt="Adultos" class="w-full h-44 object-cover">
           <div class="p-6">
-            <h3 class="font-semibold text-lg mb-2">Adultos</h3>
+            <h3 class="font-semibold text-lg mb-2 text-primary">Adultos</h3>
             <p class="text-muted text-sm leading-relaxed">Processos de autoconhecimento, regulação emocional e construção de uma vida com mais sentido.</p>
           </div>
         </div>
-        <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-sm">
-          <img src="https://images.unsplash.com/photo-1588196741170-0b4d0b1b0b0b?w=500&q=80" alt="Atendimento online" class="w-full h-44 object-cover" onerror="this.src='https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=500&q=80'">
+        <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-sm border border-purple-50">
+          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=500&q=80" alt="Atendimento online" class="w-full h-44 object-cover">
           <div class="p-6">
-            <h3 class="font-semibold text-lg mb-2">Atendimento online</h3>
+            <h3 class="font-semibold text-lg mb-2 text-primary">Atendimento online</h3>
             <p class="text-muted text-sm leading-relaxed">Sessões por vídeo, com a mesma qualidade e sigilo de um consultório presencial.</p>
           </div>
         </div>
@@ -221,24 +221,24 @@
   <section id="como-funciona" class="py-20 bg-white">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="text-center max-w-2xl mx-auto mb-14">
-        <h2 class="font-serif text-3xl sm:text-4xl font-semibold mb-4">Como é a sua primeira conversa</h2>
+        <h2 class="font-serif text-3xl sm:text-4xl font-semibold mb-4 text-text">Como é a sua primeira conversa</h2>
         <p class="text-muted">A primeira sessão é de escuta e alinhamento. Ninguém sai de lá sem ter entendido o próximo passo.</p>
       </div>
 
       <div class="grid md:grid-cols-3 gap-8">
         <div class="text-center">
-          <div class="w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center text-xl font-semibold mx-auto mb-5">1</div>
-          <h3 class="font-semibold text-lg mb-2">Você conta o que sente</h3>
+          <div class="w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center text-xl font-semibold mx-auto mb-5 shadow-md">1</div>
+          <h3 class="font-semibold text-lg mb-2 text-text">Você conta o que sente</h3>
           <p class="text-muted text-sm">A conversa começa pelo motivo que te trouxe aqui, sem pressa e sem interrupção.</p>
         </div>
         <div class="text-center">
-          <div class="w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center text-xl font-semibold mx-auto mb-5">2</div>
-          <h3 class="font-semibold text-lg mb-2">Avaliamos juntos</h3>
+          <div class="w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center text-xl font-semibold mx-auto mb-5 shadow-md">2</div>
+          <h3 class="font-semibold text-lg mb-2 text-text">Avaliamos juntos</h3>
           <p class="text-muted text-sm">Explico o que observo, as possibilidades de trabalho e como o processo pode fluir.</p>
         </div>
         <div class="text-center">
-          <div class="w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center text-xl font-semibold mx-auto mb-5">3</div>
-          <h3 class="font-semibold text-lg mb-2">Você decide com clareza</h3>
+          <div class="w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center text-xl font-semibold mx-auto mb-5 shadow-md">3</div>
+          <h3 class="font-semibold text-lg mb-2 text-text">Você decide com clareza</h3>
           <p class="text-muted text-sm">Recebe as informações e decide, no seu tempo, se faz sentido continuar o acompanhamento.</p>
         </div>
       </div>
@@ -249,32 +249,32 @@
   <section class="py-20 bg-soft">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="text-center max-w-2xl mx-auto mb-14">
-        <h2 class="font-serif text-3xl sm:text-4xl font-semibold mb-4">O que você pode confiar</h2>
+        <h2 class="font-serif text-3xl sm:text-4xl font-semibold mb-4 text-text">O que você pode confiar</h2>
         <p class="text-muted">Não são promessas — são práticas que fazem parte do atendimento todos os dias.</p>
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="bg-white rounded-2xl p-6">
-          <h3 class="font-semibold mb-2">Escuta primeiro</h3>
+        <div class="bg-white rounded-2xl p-6 border border-purple-50 shadow-sm">
+          <h3 class="font-semibold mb-2 text-primary">Escuta primeiro</h3>
           <p class="text-sm text-muted">Nada começa sem entender o seu caso e o que você precisa.</p>
         </div>
-        <div class="bg-white rounded-2xl p-6">
-          <h3 class="font-semibold mb-2">Clareza no processo</h3>
+        <div class="bg-white rounded-2xl p-6 border border-purple-50 shadow-sm">
+          <h3 class="font-semibold mb-2 text-primary">Clareza no processo</h3>
           <p class="text-sm text-muted">Você sabe o que está sendo trabalhado e por quê.</p>
         </div>
-        <div class="bg-white rounded-2xl p-6">
-          <h3 class="font-semibold mb-2">Linguagem acessível</h3>
+        <div class="bg-white rounded-2xl p-6 border border-purple-50 shadow-sm">
+          <h3 class="font-semibold mb-2 text-primary">Linguagem acessível</h3>
           <p class="text-sm text-muted">Sem jargão desnecessário. Se ficou dúvida, explico de outro jeito.</p>
         </div>
-        <div class="bg-white rounded-2xl p-6">
-          <h3 class="font-semibold mb-2">Horário marcado</h3>
+        <div class="bg-white rounded-2xl p-6 border border-purple-50 shadow-sm">
+          <h3 class="font-semibold mb-2 text-primary">Horário marcado</h3>
           <p class="text-sm text-muted">Sessões com horário definido. Você não fica esperando.</p>
         </div>
-        <div class="bg-white rounded-2xl p-6">
-          <h3 class="font-semibold mb-2">Sigilo absoluto</h3>
+        <div class="bg-white rounded-2xl p-6 border border-purple-50 shadow-sm">
+          <h3 class="font-semibold mb-2 text-primary">Sigilo absoluto</h3>
           <p class="text-sm text-muted">Tudo que é falado fica entre nós, com total confidencialidade.</p>
         </div>
-        <div class="bg-white rounded-2xl p-6">
-          <h3 class="font-semibold mb-2">Ritmo respeitoso</h3>
+        <div class="bg-white rounded-2xl p-6 border border-purple-50 shadow-sm">
+          <h3 class="font-semibold mb-2 text-primary">Ritmo respeitoso</h3>
           <p class="text-sm text-muted">O processo respeita o seu tempo. Sem pressão para “avançar”.</p>
         </div>
       </div>
@@ -285,20 +285,20 @@
   <section class="py-16 bg-white">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="text-center mb-10">
-        <h2 class="font-serif text-3xl font-semibold mb-3">Um espaço de leveza</h2>
+        <h2 class="font-serif text-3xl font-semibold mb-3 text-text">Um espaço de leveza</h2>
         <p class="text-muted text-sm">Ambiente virtual acolhedor, seguro e preparado para o seu processo.</p>
       </div>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div class="rounded-2xl overflow-hidden h-48 sm:h-56">
+        <div class="rounded-2xl overflow-hidden h-48 sm:h-56 ring-2 ring-accent/20">
           <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=80" alt="Natureza calma" class="w-full h-full object-cover hover:scale-105 transition duration-500">
         </div>
-        <div class="rounded-2xl overflow-hidden h-48 sm:h-56">
+        <div class="rounded-2xl overflow-hidden h-48 sm:h-56 ring-2 ring-accent/20">
           <img src="https://images.unsplash.com/photo-1518241353330-0f7941e1d4c5?w=400&q=80" alt="Momento de paz" class="w-full h-full object-cover hover:scale-105 transition duration-500">
         </div>
-        <div class="rounded-2xl overflow-hidden h-48 sm:h-56">
+        <div class="rounded-2xl overflow-hidden h-48 sm:h-56 ring-2 ring-accent/20">
           <img src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=400&q=80" alt="Luz suave" class="w-full h-full object-cover hover:scale-105 transition duration-500">
         </div>
-        <div class="rounded-2xl overflow-hidden h-48 sm:h-56">
+        <div class="rounded-2xl overflow-hidden h-48 sm:h-56 ring-2 ring-accent/20">
           <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=400&q=80" alt="Tranquilidade" class="w-full h-full object-cover hover:scale-105 transition duration-500">
         </div>
       </div>
@@ -310,37 +310,37 @@
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="grid lg:grid-cols-2 gap-12 items-start">
         <div>
-          <h2 class="font-serif text-3xl sm:text-4xl font-semibold mb-4">Agende sua avaliação</h2>
+          <h2 class="font-serif text-3xl sm:text-4xl font-semibold mb-4 text-text">Agende sua avaliação</h2>
           <p class="text-muted mb-6 leading-relaxed">
             A forma mais rápida é pelo WhatsApp. Se preferir, preencha o formulário abaixo e entrarei em contato para confirmar o melhor horário.
           </p>
           <a href="https://wa.me/5561995581985?text=Olá!%20Gostaria%20de%20agendar%20uma%20avaliação." target="_blank"
-             class="btn-primary inline-flex items-center gap-2 bg-green-600 text-white px-6 py-3.5 rounded-full font-medium mb-8">
+             class="btn-primary inline-flex items-center gap-2 bg-green-600 text-white px-6 py-3.5 rounded-full font-medium mb-8 hover:bg-green-700">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             Falar no WhatsApp
           </a>
 
-          <form id="booking-form" class="space-y-4 bg-white rounded-2xl p-6 shadow-sm">
+          <form id="booking-form" class="space-y-4 bg-white rounded-2xl p-6 shadow-sm border border-purple-50">
             <p class="font-medium text-sm text-primary mb-2">Ou preencha e eu retorno o contato</p>
             <div>
-              <label class="block text-sm font-medium mb-1">Nome completo</label>
-              <input type="text" name="nome" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/30" placeholder="Seu nome">
+              <label class="block text-sm font-medium mb-1 text-text">Nome completo</label>
+              <input type="text" name="nome" required class="w-full px-4 py-3 rounded-xl border border-purple-100 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary" placeholder="Seu nome">
             </div>
             <div>
-              <label class="block text-sm font-medium mb-1">WhatsApp</label>
-              <input type="tel" name="whatsapp" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/30" placeholder="(61) 99999-9999">
+              <label class="block text-sm font-medium mb-1 text-text">WhatsApp</label>
+              <input type="tel" name="whatsapp" required class="w-full px-4 py-3 rounded-xl border border-purple-100 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary" placeholder="(61) 99999-9999">
             </div>
             <div>
-              <label class="block text-sm font-medium mb-1">Melhor horário para contato</label>
-              <select name="horario" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/30">
+              <label class="block text-sm font-medium mb-1 text-text">Melhor horário para contato</label>
+              <select name="horario" class="w-full px-4 py-3 rounded-xl border border-purple-100 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary">
                 <option>Manhã</option>
                 <option>Tarde</option>
                 <option>Noite</option>
               </select>
             </div>
             <div>
-              <label class="block text-sm font-medium mb-1">Breve motivo (opcional)</label>
-              <textarea name="motivo" rows="3" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/30" placeholder="Ex: ansiedade, dificuldade de sono..."></textarea>
+              <label class="block text-sm font-medium mb-1 text-text">Breve motivo (opcional)</label>
+              <textarea name="motivo" rows="3" class="w-full px-4 py-3 rounded-xl border border-purple-100 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary" placeholder="Ex: ansiedade, dificuldade de sono..."></textarea>
             </div>
             <button type="submit" class="btn-primary w-full bg-primary text-white py-3.5 rounded-xl font-medium">
               Solicitar agendamento
@@ -348,8 +348,8 @@
           </form>
         </div>
 
-        <div class="bg-white rounded-3xl p-8 shadow-sm">
-          <h3 class="font-semibold text-lg mb-3">Integração com Google Agenda</h3>
+        <div class="bg-white rounded-3xl p-8 shadow-sm border border-purple-50">
+          <h3 class="font-semibold text-lg mb-3 text-primary">Integração com Google Agenda</h3>
           <p class="text-sm text-muted mb-6">
             Esta área está preparada para receber a integração com Google Calendar (API ou embed). Quando conectada, o paciente poderá visualizar horários disponíveis e agendar diretamente.
           </p>
@@ -367,11 +367,11 @@
   <section id="checkout" class="py-20 bg-white">
     <div class="max-w-3xl mx-auto px-4 sm:px-6">
       <div class="text-center mb-10">
-        <h2 class="font-serif text-3xl sm:text-4xl font-semibold mb-3">Área de pagamento (pronta para integração)</h2>
+        <h2 class="font-serif text-3xl sm:text-4xl font-semibold mb-3 text-text">Área de pagamento (pronta para integração)</h2>
         <p class="text-muted text-sm">Front-end de checkout preparado. Basta conectar Stripe, Mercado Pago, PagSeguro ou outro gateway.</p>
       </div>
 
-      <div class="bg-soft rounded-3xl shadow-lg overflow-hidden">
+      <div class="bg-soft rounded-3xl shadow-lg overflow-hidden border border-purple-100">
         <div class="bg-primary text-white px-6 py-4">
           <p class="font-medium">Sessão de psicoterapia</p>
           <p class="text-sm opacity-90">Avaliação inicial ou sessão avulsa</p>
@@ -379,33 +379,33 @@
         <div class="p-6 sm:p-8 space-y-5">
           <div class="flex justify-between items-center">
             <span class="text-muted">Valor da sessão</span>
-            <span class="font-semibold text-xl">R$ —</span>
+            <span class="font-semibold text-xl text-primary">R$ —</span>
           </div>
           <p class="text-xs text-muted">O valor é combinado na avaliação inicial, de acordo com o plano de acompanhamento.</p>
 
-          <div class="border-t pt-5 space-y-4">
+          <div class="border-t border-purple-100 pt-5 space-y-4">
             <div>
-              <label class="block text-sm font-medium mb-1">Nome no cartão / pagamento</label>
-              <input type="text" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/30" placeholder="Nome completo">
+              <label class="block text-sm font-medium mb-1 text-text">Nome no cartão / pagamento</label>
+              <input type="text" class="w-full px-4 py-3 rounded-xl border border-purple-100 focus:outline-none focus:ring-2 focus:ring-primary/40" placeholder="Nome completo">
             </div>
             <div>
-              <label class="block text-sm font-medium mb-1">E-mail para recibo</label>
-              <input type="email" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/30" placeholder="seu@email.com">
+              <label class="block text-sm font-medium mb-1 text-text">E-mail para recibo</label>
+              <input type="email" class="w-full px-4 py-3 rounded-xl border border-purple-100 focus:outline-none focus:ring-2 focus:ring-primary/40" placeholder="seu@email.com">
             </div>
             <div class="grid grid-cols-2 gap-4">
               <div>
-                <label class="block text-sm font-medium mb-1">Número do cartão</label>
-                <input type="text" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/30" placeholder="•••• •••• •••• ••••" disabled>
+                <label class="block text-sm font-medium mb-1 text-text">Número do cartão</label>
+                <input type="text" class="w-full px-4 py-3 rounded-xl border border-purple-100 focus:outline-none focus:ring-2 focus:ring-primary/40" placeholder="•••• •••• •••• ••••" disabled>
               </div>
               <div>
-                <label class="block text-sm font-medium mb-1">Validade / CVV</label>
-                <input type="text" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/30" placeholder="MM/AA  •••" disabled>
+                <label class="block text-sm font-medium mb-1 text-text">Validade / CVV</label>
+                <input type="text" class="w-full px-4 py-3 rounded-xl border border-purple-100 focus:outline-none focus:ring-2 focus:ring-primary/40" placeholder="MM/AA  •••" disabled>
               </div>
             </div>
-            <p class="text-xs text-muted bg-white p-3 rounded-lg">
+            <p class="text-xs text-muted bg-white p-3 rounded-lg border border-purple-50">
               🔒 Campos desabilitados no momento. Quando o gateway for conectado (Stripe, Mercado Pago etc.), este formulário processará o pagamento de forma segura.
             </p>
-            <button type="button" class="w-full bg-gray-300 text-gray-600 py-3.5 rounded-xl font-medium cursor-not-allowed" disabled>
+            <button type="button" class="w-full bg-gray-200 text-gray-500 py-3.5 rounded-xl font-medium cursor-not-allowed" disabled>
               Pagar agora (integração pendente)
             </button>
           </div>
@@ -417,40 +417,40 @@
   <!-- FAQ -->
   <section class="py-20 bg-soft">
     <div class="max-w-3xl mx-auto px-4 sm:px-6">
-      <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-center mb-12">Perguntas frequentes</h2>
+      <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-center mb-12 text-text">Perguntas frequentes</h2>
       <div class="space-y-4" id="faq">
-        <details class="group bg-white rounded-2xl p-5 shadow-sm">
-          <summary class="font-medium cursor-pointer list-none flex justify-between items-center">
+        <details class="group bg-white rounded-2xl p-5 shadow-sm border border-purple-50">
+          <summary class="font-medium cursor-pointer list-none flex justify-between items-center text-text">
             A primeira conversa é cobrada?
-            <span class="text-primary group-open:rotate-45 transition">+</span>
+            <span class="text-primary group-open:rotate-45 transition text-xl">+</span>
           </summary>
           <p class="mt-3 text-sm text-muted leading-relaxed">A avaliação inicial é o momento de nos conhecermos e entendermos se faz sentido seguir juntas. O valor e as condições são combinados com transparência nesse primeiro contato.</p>
         </details>
-        <details class="group bg-white rounded-2xl p-5 shadow-sm">
-          <summary class="font-medium cursor-pointer list-none flex justify-between items-center">
+        <details class="group bg-white rounded-2xl p-5 shadow-sm border border-purple-50">
+          <summary class="font-medium cursor-pointer list-none flex justify-between items-center text-text">
             O atendimento é online?
-            <span class="text-primary group-open:rotate-45 transition">+</span>
+            <span class="text-primary group-open:rotate-45 transition text-xl">+</span>
           </summary>
           <p class="mt-3 text-sm text-muted leading-relaxed">Sim. Atendo adolescentes e adultos de forma 100% online, com a mesma qualidade, sigilo e presença de um consultório presencial.</p>
         </details>
-        <details class="group bg-white rounded-2xl p-5 shadow-sm">
-          <summary class="font-medium cursor-pointer list-none flex justify-between items-center">
+        <details class="group bg-white rounded-2xl p-5 shadow-sm border border-purple-50">
+          <summary class="font-medium cursor-pointer list-none flex justify-between items-center text-text">
             Atende adolescentes?
-            <span class="text-primary group-open:rotate-45 transition">+</span>
+            <span class="text-primary group-open:rotate-45 transition text-xl">+</span>
           </summary>
           <p class="mt-3 text-sm text-muted leading-relaxed">Sim. O atendimento a adolescentes é feito com cuidado especial, respeitando a autonomia e o momento de vida de cada um.</p>
         </details>
-        <details class="group bg-white rounded-2xl p-5 shadow-sm">
-          <summary class="font-medium cursor-pointer list-none flex justify-between items-center">
+        <details class="group bg-white rounded-2xl p-5 shadow-sm border border-purple-50">
+          <summary class="font-medium cursor-pointer list-none flex justify-between items-center text-text">
             Como funciona o pagamento?
-            <span class="text-primary group-open:rotate-45 transition">+</span>
+            <span class="text-primary group-open:rotate-45 transition text-xl">+</span>
           </summary>
           <p class="mt-3 text-sm text-muted leading-relaxed">As formas de pagamento (Pix, cartão, parcelamento) são combinadas no momento do agendamento. O site já está preparado para receber integração de checkout online.</p>
         </details>
-        <details class="group bg-white rounded-2xl p-5 shadow-sm">
-          <summary class="font-medium cursor-pointer list-none flex justify-between items-center">
+        <details class="group bg-white rounded-2xl p-5 shadow-sm border border-purple-50">
+          <summary class="font-medium cursor-pointer list-none flex justify-between items-center text-text">
             Existe lista de espera?
-            <span class="text-primary group-open:rotate-45 transition">+</span>
+            <span class="text-primary group-open:rotate-45 transition text-xl">+</span>
           </summary>
           <p class="mt-3 text-sm text-muted leading-relaxed">Sim. Quando a agenda está cheia, você pode entrar na lista de espera. Assim que houver disponibilidade, entro em contato.</p>
         </details>
@@ -461,7 +461,7 @@
   <!-- CTA final -->
   <section class="py-20 gradient-bg">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
-      <h2 class="font-serif text-3xl sm:text-4xl font-semibold mb-4">Vamos cuidar disso juntos?</h2>
+      <h2 class="font-serif text-3xl sm:text-4xl font-semibold mb-4 text-text">Vamos cuidar disso juntos?</h2>
       <p class="text-muted mb-8">Agende sua avaliação e tire suas dúvidas com quem entende de ansiedade e acolhimento.</p>
       <a href="https://wa.me/5561995581985?text=Olá!%20Gostaria%20de%20agendar%20uma%20avaliação." target="_blank"
          class="btn-primary inline-block bg-primary text-white px-10 py-4 rounded-full font-medium text-lg">
@@ -471,26 +471,26 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-text text-white py-12">
+  <footer class="bg-primary text-white py-12">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
         <div>
           <p class="font-serif font-semibold text-lg mb-2">Lidieide Aguiar</p>
-          <p class="text-sm text-gray-400">Psicóloga Clínica • Neuropsicologia</p>
-          <p class="text-sm text-gray-400 mt-1">CRP 01/31063</p>
+          <p class="text-sm text-purple-200">Psicóloga Clínica • Neuropsicologia</p>
+          <p class="text-sm text-purple-200 mt-1">CRP 01/31063</p>
         </div>
         <div>
           <p class="font-medium mb-2">Contato</p>
-          <a href="https://wa.me/5561995581985" target="_blank" class="text-sm text-gray-300 hover:text-white block">WhatsApp: (61) 99558-1985</a>
-          <a href="https://www.instagram.com/lidieideaguiar" target="_blank" class="text-sm text-gray-300 hover:text-white block mt-1">@lidieideaguiar</a>
+          <a href="https://wa.me/5561995581985" target="_blank" class="text-sm text-purple-100 hover:text-white block">WhatsApp: (61) 99558-1985</a>
+          <a href="https://www.instagram.com/lidieideaguiar" target="_blank" class="text-sm text-purple-100 hover:text-white block mt-1">@lidieideaguiar</a>
         </div>
         <div>
           <p class="font-medium mb-2">Atendimento</p>
-          <p class="text-sm text-gray-400">Online • Adolescentes e Adultos</p>
-          <p class="text-sm text-gray-400 mt-1">Foco em ansiedade e acolhimento</p>
+          <p class="text-sm text-purple-200">Online • Adolescentes e Adultos</p>
+          <p class="text-sm text-purple-200 mt-1">Foco em ansiedade e acolhimento</p>
         </div>
       </div>
-      <div class="border-t border-gray-700 pt-6 text-center text-sm text-gray-500">
+      <div class="border-t border-purple-700 pt-6 text-center text-sm text-purple-300">
         © 2026 Lidieide Aguiar. Todos os direitos reservados.
       </div>
     </div>
