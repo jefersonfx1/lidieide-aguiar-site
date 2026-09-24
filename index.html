@@ -79,13 +79,13 @@ tailwind.config = {
   .pulse-soft { animation: softPulse 2.5s infinite; }
   .float-soft { animation: floatY 4s ease-in-out infinite; }
 
-  /* Mascot - static, corner, vertically centered, no effects */
+  /* Mascot - larger, corner, vertically centered, no effects */
   .mascote-hero {
     position: absolute;
     top: 50%;
-    right: 4px;
+    right: 2px;
     transform: translateY(-50%);
-    width: 100px;
+    width: 140px;
     z-index: 15;
     pointer-events: none;
   }
@@ -96,10 +96,10 @@ tailwind.config = {
     display: block;
   }
   @media (min-width: 640px) {
-    .mascote-hero { width: 130px; right: 10px; }
+    .mascote-hero { width: 180px; right: 8px; }
   }
   @media (min-width: 1024px) {
-    .mascote-hero { width: 160px; right: 16px; }
+    .mascote-hero { width: 220px; right: 12px; }
   }
 
   /* Banner photo - full width, taller, face-focused crop */
@@ -205,15 +205,15 @@ tailwind.config = {
 
 <div class="max-w-6xl mx-auto px-4 sm:px-6 relative">
 
-  <!-- Texto de introdução com degradê + mascote no canto, centralizada na vertical -->
-  <div class="relative animate-fade-in intro-gradient rounded-3xl p-6 sm:p-8 lg:p-10 shadow-sm mb-8 pr-28 sm:pr-40">
-    <p class="text-primary font-medium text-sm tracking-wide uppercase mb-3">Atendimento online • Adolescentes e Adultos</p>
-    <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight text-text mb-5">Descomplicando a ansiedade com acolhimento, leveza e segurança</h1>
-    <p class="text-base sm:text-lg text-muted leading-relaxed mb-7 max-w-xl">Espaço terapêutico seguro para você entender o que sente, encontrar clareza e construir caminhos mais leves — com ciência e cuidado humano.</p>
+  <!-- Texto menor + mascote maior no canto, centralizada na vertical -->
+  <div class="relative animate-fade-in intro-gradient rounded-3xl p-5 sm:p-6 lg:p-8 shadow-sm mb-8 pr-36 sm:pr-48 lg:pr-56">
+    <p class="text-primary font-medium text-xs sm:text-sm tracking-wide uppercase mb-2">Atendimento online • Adolescentes e Adultos</p>
+    <h1 class="font-serif text-2xl sm:text-3xl lg:text-4xl font-semibold leading-tight text-text mb-3">Descomplicando a ansiedade com acolhimento, leveza e segurança</h1>
+    <p class="text-sm sm:text-base text-muted leading-relaxed mb-5 max-w-md">Espaço terapêutico seguro para você entender o que sente, encontrar clareza e construir caminhos mais leves — com ciência e cuidado humano.</p>
     <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
-      <a href="#como-funciona" class="border-2 border-primary text-primary px-7 py-3.5 rounded-full font-medium text-center hover:bg-secondary transition">Como funciona</a>
+      <a href="#como-funciona" class="border-2 border-primary text-primary px-6 py-3 rounded-full font-medium text-sm text-center hover:bg-secondary transition">Como funciona</a>
     </div>
-    <!-- Mascote no canto direito, centralizada na vertical -->
+    <!-- Mascote maior no canto direito, centralizada na vertical -->
     <div class="mascote-hero" id="mascoteHero">
       <img src="mascote.png" alt="Mascote Lidieide" draggable="false">
     </div>
