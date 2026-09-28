@@ -1,1 +1,398 @@
-PLACEHOLDER
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Home | Lidieide Aguiar</title>
+<meta name="description" content="Descomplicando a ansiedade com acolhimento, leveza e segurança. Atendimento online para adolescentes e adultos. CRP 01/31063."/>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        primary: '#5B2C8E',
+        secondary: '#F0E6F7',
+        accent: '#C9A0DC',
+        soft: '#FAF7FC',
+        text: '#2D1B3D',
+        muted: '#7A6A8A'
+      },
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+        serif: ['Playfair Display', 'serif']
+      }
+    }
+  }
+}
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  .gradient-bg { background: linear-gradient(135deg, #FAF7FC 0%, #F0E6F7 50%, #E8D5F0 100%); }
+  .btn-primary { transition: all .3s cubic-bezier(0.4,0,0.2,1); }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 28px -6px rgba(91,44,142,.45); }
+  .btn-primary:active { transform: translateY(0) scale(0.98); }
+  .card-hover { transition: all .35s cubic-bezier(0.4,0,0.2,1); }
+  .card-hover:hover { transform: translateY(-6px); box-shadow: 0 24px 48px -12px rgba(91,44,142,.18); }
+
+  .logo-watermark {
+    position: fixed;
+    inset: 0;
+    background-image: url("logo.png");
+    background-repeat: no-repeat;
+    background-position: center 35%;
+    background-size: min(70vmin, 520px);
+    opacity: 0.06;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .intro-gradient {
+    background: linear-gradient(145deg, #F5ECF9 0%, #EDE0F5 40%, #E4D0F0 100%);
+    border: 1px solid rgba(201, 160, 220, 0.35);
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes softPulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(91,44,142,0.25); }
+    50% { box-shadow: 0 0 0 12px rgba(91,44,142,0); }
+  }
+  @keyframes floatY {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+  .animate-fade-in { animation: fadeInUp 0.7s ease-out both; }
+  .animate-delay-1 { animation-delay: 0.15s; }
+  .animate-delay-2 { animation-delay: 0.3s; }
+  .animate-delay-3 { animation-delay: 0.45s; }
+  .pulse-soft { animation: softPulse 2.5s infinite; }
+  .float-soft { animation: floatY 4s ease-in-out infinite; }
+
+  .mascote-hero {
+    position: absolute;
+    top: 50%;
+    right: 2px;
+    transform: translateY(-50%);
+    width: 140px;
+    z-index: 15;
+    pointer-events: none;
+  }
+  .mascote-hero img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
+  @media (min-width: 640px) {
+    .mascote-hero { width: 180px; right: 8px; }
+  }
+  @media (min-width: 1024px) {
+    .mascote-hero { width: 220px; right: 12px; }
+  }
+
+  .hero-banner {
+    position: relative;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    border-radius: 0;
+    overflow: hidden;
+    box-shadow: none;
+  }
+  .hero-banner img {
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+    object-position: center 18%;
+    display: block;
+  }
+  @media (min-width: 640px) {
+    .hero-banner img { height: 440px; object-position: center 15%; }
+  }
+  @media (min-width: 1024px) {
+    .hero-banner img { height: 560px; object-position: center 12%; }
+  }
+  .hero-banner-overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(45,27,61,0.85) 0%, rgba(45,27,61,0.4) 55%, transparent 100%);
+    padding: 1.25rem 1.25rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .hero-banner-overlay img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    border-radius: 0.75rem;
+    background: white;
+    padding: 4px;
+    flex-shrink: 0;
+  }
+  .hero-banner-overlay .info h3 {
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-size: 1.05rem;
+    line-height: 1.2;
+  }
+  .hero-banner-overlay .info p {
+    color: rgba(255,255,255,0.85);
+    font-size: 0.8rem;
+    margin-top: 2px;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+    outline: 2px solid #5B2C8E;
+    outline-offset: 3px;
+  }
+  .hero-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.35;
+    pointer-events: none;
+  }
+
+  .wa-float {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 60;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #25D366;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .wa-float:hover {
+    transform: scale(1.08);
+    box-shadow: 0 8px 28px rgba(37, 211, 102, 0.55);
+  }
+  .wa-float svg { width: 28px; height: 28px; fill: currentColor; }
+</style>
+</head>
+<body class="font-sans text-text antialiased bg-white relative">
+
+<div class="logo-watermark" aria-hidden="true"></div>
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-purple-100">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+<a href="index.html" class="flex items-center gap-3 group">
+<img src="logo.png" alt="Logo Lidieide Aguiar" class="h-12 w-12 object-contain transition group-hover:scale-105">
+<div class="leading-tight">
+<p class="font-serif font-semibold text-lg text-primary group-hover:opacity-80 transition">Lidieide Aguiar</p>
+<p class="text-xs text-muted">Psicóloga Clínica • CRP 01/31063</p>
+</div>
+</a>
+<a href="agendar.html" class="btn-primary bg-primary text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-[#4A2275] pulse-soft">Agendar agora</a>
+</div>
+</header>
+
+<section class="gradient-bg pt-28 pb-16 sm:pt-36 sm:pb-24 overflow-hidden relative z-10">
+<div class="hero-blob w-72 h-72 bg-accent top-20 -left-20"></div>
+<div class="hero-blob w-96 h-96 bg-primary/20 bottom-0 -right-32"></div>
+
+<div class="max-w-6xl mx-auto px-4 sm:px-6 relative">
+
+  <div class="relative animate-fade-in intro-gradient rounded-3xl p-5 sm:p-6 lg:p-8 shadow-sm mb-8 pr-36 sm:pr-48 lg:pr-56">
+    <p class="text-primary font-medium text-xs sm:text-sm tracking-wide uppercase mb-2">Atendimento online • Adolescentes e Adultos</p>
+    <h1 class="font-serif text-2xl sm:text-3xl lg:text-4xl font-semibold leading-tight text-text mb-3">Descomplicando a ansiedade com acolhimento, leveza e segurança</h1>
+    <p class="text-sm sm:text-base text-muted leading-relaxed mb-5 max-w-md">Espaço terapêutico seguro para você entender o que sente, encontrar clareza e construir caminhos mais leves — com ciência e cuidado humano.</p>
+    <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
+      <a href="#como-funciona" class="border-2 border-primary text-primary px-6 py-3 rounded-full font-medium text-sm text-center hover:bg-secondary transition">Como funciona</a>
+    </div>
+    <div class="mascote-hero" id="mascoteHero">
+      <img src="mascote.png" alt="Mascote Lidieide" draggable="false">
+    </div>
+  </div>
+
+  <div class="hero-banner animate-fade-in animate-delay-1 mb-10">
+    <img src="lidieide-home.png" alt="Lidieide Aguiar - Psicóloga" loading="eager">
+    <div class="hero-banner-overlay">
+      <img src="logo.png" alt="Logo">
+      <div class="info">
+        <h3>Lidieide Aguiar</h3>
+        <p>Psicóloga Clínica | Palestrante • CRP 01/31063</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-2 sm:grid-cols-4 gap-5">
+    <div class="bg-white/90 backdrop-blur rounded-2xl p-5 shadow-sm border border-purple-50 animate-fade-in animate-delay-1"><p class="text-2xl font-semibold text-primary">Online</p><p class="text-sm text-muted mt-1">Atendimento seguro</p></div>
+    <div class="bg-white/90 backdrop-blur rounded-2xl p-5 shadow-sm border border-purple-50 animate-fade-in animate-delay-2"><p class="text-2xl font-semibold text-primary">Acolhimento</p><p class="text-sm text-muted mt-1">Sem julgamento</p></div>
+    <div class="bg-white/90 backdrop-blur rounded-2xl p-5 shadow-sm border border-purple-50 animate-fade-in animate-delay-3"><p class="text-2xl font-semibold text-primary">Ciência</p><p class="text-sm text-muted mt-1">Baseada em evidências</p></div>
+    <div class="bg-white/90 backdrop-blur rounded-2xl p-5 shadow-sm border border-purple-50 animate-fade-in animate-delay-3"><p class="text-2xl font-semibold text-primary">Leveza</p><p class="text-sm text-muted mt-1">Processo humanizado</p></div>
+  </div>
+</div>
+</section>
+
+<section class="py-20 bg-white reveal relative z-10">
+<div class="max-w-6xl mx-auto px-4 sm:px-6">
+<div class="grid lg:grid-cols-2 gap-12 items-center">
+<div class="order-2 lg:order-1">
+<div class="rounded-3xl overflow-hidden shadow-lg ring-4 ring-accent/20 relative">
+<img src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=700&q=80" alt="Momento de escuta e acolhimento" class="w-full h-80 sm:h-96 object-cover" loading="lazy">
+</div>
+</div>
+<div class="order-1 lg:order-2">
+<h2 class="font-serif text-3xl sm:text-4xl font-semibold mb-6 text-text">Atendimento explicado antes de começar</h2>
+<p class="text-muted leading-relaxed mb-6">Na primeira conversa você entende o que está acontecendo, quais caminhos são possíveis e como o processo terapêutico funciona. Nada de pressão — só clareza e acolhimento.</p>
+<ul class="space-y-3 text-muted mb-8">
+<li class="flex items-start gap-3"><span class="text-primary mt-1 font-bold">✓</span><span>Avaliação inicial sem compromisso</span></li>
+<li class="flex items-start gap-3"><span class="text-primary mt-1 font-bold">✓</span><span>Atendimento 100% online (adolescentes e adultos)</span></li>
+<li class="flex items-start gap-3"><span class="text-primary mt-1 font-bold">✓</span><span>Foco em ansiedade, regulação emocional e autoconhecimento</span></li>
+<li class="flex items-start gap-3"><span class="text-primary mt-1 font-bold">✓</span><span>Abordagem com acolhimento, leveza e segurança</span></li>
+</ul>
+<div class="bg-secondary rounded-2xl p-6 border border-accent/30 flex items-start gap-4">
+<img src="logo.png" alt="Logo" class="h-16 w-16 object-contain flex-shrink-0">
+<div>
+<p class="text-sm font-medium text-primary mb-1">Psicóloga Clínica | Palestrante</p>
+<h3 class="font-serif text-xl font-semibold mb-1 text-text">Lidieide Aguiar</h3>
+<p class="text-muted text-sm leading-relaxed mb-2">Formação em Neuropsicologia; Terapia Cognitiva-Comportamental; Terapia de Aceitação e Compromisso e Terapia Focada na Compaixão.</p>
+<p class="text-muted text-sm leading-relaxed">CRP 01/31063. Trabalho com seriedade, acolhimento e compromisso com o processo psicoterapêutico.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="py-20 bg-soft reveal relative z-10">
+<div class="max-w-6xl mx-auto px-4 sm:px-6">
+<div class="text-center max-w-2xl mx-auto mb-14">
+<h2 class="font-serif text-3xl sm:text-4xl font-semibold mb-4 text-text">O que atendemos</h2>
+<p class="text-muted">Cada processo começa pela escuta. Depois, juntos, construímos o caminho que faz sentido para você.</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="card-hover bg-white rounded-2xl overflow-hidden shadow-sm border border-purple-50"><img src="ansiedade.jpg" alt="Ansiedade" class="w-full h-44 object-cover"><div class="p-6"><h3 class="font-semibold text-lg mb-2 text-primary">Ansiedade</h3><p class="text-muted text-sm leading-relaxed">Entender os gatilhos, regular o sistema nervoso e desenvolver ferramentas práticas para o dia a dia.</p></div></div>
+<div class="card-hover bg-white rounded-2xl overflow-hidden shadow-sm border border-purple-50"><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&q=80" alt="Acolhimento emocional" class="w-full h-44 object-cover"><div class="p-6"><h3 class="font-semibold text-lg mb-2 text-primary">Acolhimento emocional</h3><p class="text-muted text-sm leading-relaxed">Espaço seguro para falar do que dói, sem julgamento, com escuta ativa e presença genuína.</p></div></div>
+<div class="card-hover bg-white rounded-2xl overflow-hidden shadow-sm border border-purple-50"><img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=500&q=80" alt="Neuropsicologia" class="w-full h-44 object-cover"><div class="p-6"><h3 class="font-semibold text-lg mb-2 text-primary">Neuropsicologia</h3><p class="text-muted text-sm leading-relaxed">Compreensão do funcionamento cognitivo e emocional para um acompanhamento mais preciso.</p></div></div>
+<div class="card-hover bg-white rounded-2xl overflow-hidden shadow-sm border border-purple-50"><img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=500&q=80" alt="Adolescentes" class="w-full h-44 object-cover"><div class="p-6"><h3 class="font-semibold text-lg mb-2 text-primary">Adolescentes</h3><p class="text-muted text-sm leading-relaxed">Apoio em questões de identidade, pressão, ansiedade e relações — de forma leve e respeitosa.</p></div></div>
+<div class="card-hover bg-white rounded-2xl overflow-hidden shadow-sm border border-purple-50"><img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=500&q=80" alt="Adultos" class="w-full h-44 object-cover"><div class="p-6"><h3 class="font-semibold text-lg mb-2 text-primary">Adultos</h3><p class="text-muted text-sm leading-relaxed">Processos de autoconhecimento, regulação emocional e construção de uma vida com mais sentido.</p></div></div>
+<div class="card-hover bg-white rounded-2xl overflow-hidden shadow-sm border border-purple-50"><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=500&q=80" alt="Atendimento online" class="w-full h-44 object-cover"><div class="p-6"><h3 class="font-semibold text-lg mb-2 text-primary">Atendimento online</h3><p class="text-muted text-sm leading-relaxed">Sessões por vídeo, com a mesma qualidade e sigilo de um consultório presencial.</p></div></div>
+</div>
+</div>
+</section>
+
+<section id="como-funciona" class="py-20 bg-white reveal relative z-10">
+<div class="max-w-6xl mx-auto px-4 sm:px-6">
+<div class="text-center max-w-2xl mx-auto mb-14">
+<h2 class="font-serif text-3xl sm:text-4xl font-semibold mb-4 text-text">Como é a sua primeira conversa</h2>
+<p class="text-muted">A primeira sessão é de escuta e alinhamento. Ninguém sai de lá sem ter entendido o próximo passo.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="text-center group"><div class="w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center text-xl font-semibold mx-auto mb-5 shadow-md transition group-hover:scale-110">1</div><h3 class="font-semibold text-lg mb-2 text-text">Você conta o que sente</h3><p class="text-muted text-sm">A conversa começa pelo motivo que te trouxe aqui, sem pressa e sem interrupção.</p></div>
+<div class="text-center group"><div class="w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center text-xl font-semibold mx-auto mb-5 shadow-md transition group-hover:scale-110">2</div><h3 class="font-semibold text-lg mb-2 text-text">Avaliamos juntos</h3><p class="text-muted text-sm">Explico o que observo, as possibilidades de trabalho e como o processo pode fluir.</p></div>
+<div class="text-center group"><div class="w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center text-xl font-semibold mx-auto mb-5 shadow-md transition group-hover:scale-110">3</div><h3 class="font-semibold text-lg mb-2 text-text">Você decide com clareza</h3><p class="text-muted text-sm">Recebe as informações e decide, no seu tempo, se faz sentido continuar o acompanhamento.</p></div>
+</div>
+</div>
+</section>
+
+<section class="py-20 bg-soft reveal relative z-10">
+<div class="max-w-6xl mx-auto px-4 sm:px-6">
+<div class="text-center max-w-2xl mx-auto mb-14">
+<h2 class="font-serif text-3xl sm:text-4xl font-semibold mb-4 text-text">O que você pode confiar</h2>
+<p class="text-muted">Não são promessas — são práticas que fazem parte do atendimento todos os dias.</p>
+</div>
+<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="bg-white rounded-2xl p-6 border border-purple-50 shadow-sm card-hover"><h3 class="font-semibold mb-2 text-primary">Escuta primeiro</h3><p class="text-sm text-muted">Nada começa sem entender o seu caso e o que você precisa.</p></div>
+<div class="bg-white rounded-2xl p-6 border border-purple-50 shadow-sm card-hover"><h3 class="font-semibold mb-2 text-primary">Clareza no processo</h3><p class="text-sm text-muted">Você sabe o que está sendo trabalhado e por quê.</p></div>
+<div class="bg-white rounded-2xl p-6 border border-purple-50 shadow-sm card-hover"><h3 class="font-semibold mb-2 text-primary">Linguagem acessível</h3><p class="text-sm text-muted">Sem jargão desnecessário. Se ficou dúvida, explico de outro jeito.</p></div>
+<div class="bg-white rounded-2xl p-6 border border-purple-50 shadow-sm card-hover"><h3 class="font-semibold mb-2 text-primary">Horário marcado</h3><p class="text-sm text-muted">Você não fica esperando.</p></div>
+<div class="bg-white rounded-2xl p-6 border border-purple-50 shadow-sm card-hover"><h3 class="font-semibold mb-2 text-primary">Sigilo absoluto</h3><p class="text-sm text-muted">Tudo que é falado fica entre nós, com total confidencialidade.</p></div>
+<div class="bg-white rounded-2xl p-6 border border-purple-50 shadow-sm card-hover"><h3 class="font-semibold mb-2 text-primary">Ritmo respeitoso</h3><p class="text-sm text-muted">O processo respeita o seu tempo. Sem pressão para “avançar”.</p></div>
+</div>
+</div>
+</section>
+
+<section class="py-20 bg-white reveal relative z-10">
+<div class="max-w-3xl mx-auto px-4 sm:px-6">
+<h2 class="font-serif text-3xl sm:text-4xl font-semibold text-center mb-12 text-text">Perguntas frequentes</h2>
+<div class="space-y-4">
+<details class="group bg-soft rounded-2xl p-5 transition hover:shadow-md"><summary class="font-medium cursor-pointer list-none flex justify-between items-center text-text">A primeira conversa é cobrada?<span class="text-primary group-open:rotate-45 transition text-xl">+</span></summary><p class="mt-3 text-sm text-muted leading-relaxed">A avaliação inicial é o momento de nos conhecermos e entendermos se faz sentido seguir juntas. O valor e as condições são combinados com transparência nesse primeiro contato.</p></details>
+<details class="group bg-soft rounded-2xl p-5 transition hover:shadow-md"><summary class="font-medium cursor-pointer list-none flex justify-between items-center text-text">O atendimento é online?<span class="text-primary group-open:rotate-45 transition text-xl">+</span></summary><p class="mt-3 text-sm text-muted leading-relaxed">Sim. Atendo adolescentes e adultos de forma 100% online, com a mesma qualidade, sigilo e presença de um consultório presencial.</p></details>
+<details class="group bg-soft rounded-2xl p-5 transition hover:shadow-md"><summary class="font-medium cursor-pointer list-none flex justify-between items-center text-text">Atende adolescentes?<span class="text-primary group-open:rotate-45 transition text-xl">+</span></summary><p class="mt-3 text-sm text-muted leading-relaxed">Sim. O atendimento a adolescentes é feito com cuidado especial, respeitando a autonomia e o momento de vida de cada um.</p></details>
+<details class="group bg-soft rounded-2xl p-5 transition hover:shadow-md"><summary class="font-medium cursor-pointer list-none flex justify-between items-center text-text">Como funciona o pagamento?<span class="text-primary group-open:rotate-45 transition text-xl">+</span></summary><p class="mt-3 text-sm text-muted leading-relaxed">As formas de pagamento (Pix, cartão, parcelamento) são combinadas no momento do agendamento, com total transparência.</p></details>
+<details class="group bg-soft rounded-2xl p-5 transition hover:shadow-md"><summary class="font-medium cursor-pointer list-none flex justify-between items-center text-text">Existe lista de espera?<span class="text-primary group-open:rotate-45 transition text-xl">+</span></summary><p class="mt-3 text-sm text-muted leading-relaxed">Sim. Quando a agenda está cheia, você pode entrar na lista de espera.</p></details>
+</div>
+</div>
+</section>
+
+<section class="py-20 gradient-bg reveal relative z-10">
+<div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+<img src="logo.png" alt="Logo" class="h-20 w-20 mx-auto mb-6 object-contain">
+<h2 class="font-serif text-3xl sm:text-4xl font-semibold mb-4 text-text">Vamos cuidar disso juntos?</h2>
+<p class="text-muted mb-8">Agende sua avaliação e tire suas dúvidas com quem entende de ansiedade e acolhimento.</p>
+<a href="agendar.html" class="btn-primary inline-block bg-primary text-white px-10 py-4 rounded-full font-medium text-lg pulse-soft">Agendar agora</a>
+</div>
+</section>
+
+<footer class="bg-primary text-white py-12 relative z-10">
+<div class="max-w-6xl mx-auto px-4 sm:px-6">
+<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
+<div class="flex items-start gap-3">
+<img src="logo.png" alt="Logo" class="h-14 w-14 object-contain brightness-0 invert opacity-90">
+<div>
+<p class="font-serif font-semibold text-lg mb-1">Lidieide Aguiar</p>
+<p class="text-sm text-purple-200">Psicóloga Clínica • Neuropsicologia</p>
+<p class="text-sm text-purple-200 mt-1">CRP 01/31063</p>
+</div>
+</div>
+<div>
+<p class="font-medium mb-2">Contato</p>
+<a href="https://wa.me/5561995581985" target="_blank" class="text-sm text-purple-100 hover:text-white block transition">WhatsApp: (61) 99558-1985</a>
+<a href="https://www.instagram.com/lidieideaguiar?stkn=MWU2YzJ1eW9lOTRzZw==" target="_blank" class="text-sm text-purple-100 hover:text-white block mt-1 transition">@lidieideaguiar</a>
+</div>
+<div>
+<p class="font-medium mb-2">Atendimento</p>
+<p class="text-sm text-purple-200">Online • Adolescentes e Adultos</p>
+<p class="text-sm text-purple-200 mt-1">Ansiedade e sofrimento psicológico em geral</p>
+</div>
+</div>
+<div class="border-t border-purple-700 pt-6 text-center text-sm text-purple-300">© 2026 Lidieide Aguiar. Todos os direitos reservados.</div>
+</div>
+</footer>
+
+<a href="https://wa.me/5561995581985?text=Olá!%20Venho%20do%20site%20e%20gostaria%20de%20mais%20informações%20sobre%20atendimento%20e%20sessões." target="_blank" rel="noopener" class="wa-float" aria-label="Falar no WhatsApp">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+(function() {
+  const reveals = document.querySelectorAll('.reveal');
+  if (!reveals.length) return;
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => observer.observe(el));
+})();
+</script>
+</body>
+</html>
