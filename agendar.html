@@ -103,7 +103,7 @@ Agendar via WhatsApp
 
 <div class="bg-white/95 backdrop-blur rounded-3xl p-6 sm:p-8 shadow-sm border border-purple-50">
 <h2 class="font-semibold text-lg text-primary mb-2">Preencha seus dados</h2>
-<p class="text-sm text-muted mb-6">Envie seus dados para entrarmos em contato e combinarmos o melhor horário. Você receberá a mensagem em <strong>lidieide@hotmail.com</strong>.</p>
+<p class="text-sm text-muted mb-6">Envie seus dados para entrarmos em contato e combinarmos o melhor horário.</p>
 <form id="booking-form" class="space-y-4">
 <input type="hidden" name="_subject" value="Novo contato do site — Agendamento Lidieide Aguiar">
 <input type="hidden" name="_template" value="table">
@@ -183,7 +183,7 @@ document.getElementById('booking-form').addEventListener('submit', async functio
     if (res.ok) {
       form.reset();
       btn.textContent = 'Enviado com sucesso!';
-      alert('Mensagem enviada para o e-mail! Em breve você receberá um retorno.');
+      alert('Mensagem enviada com sucesso! Em breve você receberá um retorno.');
       setTimeout(function(){ btn.disabled = false; btn.textContent = 'Enviar agora'; }, 3000);
     } else {
       throw new Error('Falha no envio');
