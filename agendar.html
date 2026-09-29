@@ -165,13 +165,13 @@ document.getElementById('booking-form').addEventListener('submit', async functio
   btn.disabled = true;
   btn.textContent = 'Enviando...';
 
+  var msg = 'Olá! Gostaria de agendar uma sessão.%0A%0A*Nome:* ' + encodeURIComponent(nome) + '%0A*WhatsApp:* ' + encodeURIComponent(whatsapp) + '%0A*Motivo:* ' + encodeURIComponent(motivo);
+  var waUrl = 'https://wa.me/5561995581985?text=' + msg;
+
   try {
-    var res = await fetch('https://formsubmit.co/ajax/lidieide@hotmail.com', {
+    await fetch('https://formsubmit.co/ajax/lidieide@hotmail.com', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      },
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify({
         Nome: nome,
         WhatsApp: whatsapp,
@@ -180,20 +180,14 @@ document.getElementById('booking-form').addEventListener('submit', async functio
         _template: 'table'
       })
     });
-    if (res.ok) {
-      form.reset();
-      btn.textContent = 'Enviado com sucesso!';
-      alert('Mensagem enviada com sucesso! Em breve você receberá um retorno.');
-      setTimeout(function(){ btn.disabled = false; btn.textContent = 'Enviar agora'; }, 3000);
-    } else {
-      throw new Error('Falha no envio');
-    }
   } catch (err) {
-    console.error(err);
-    btn.disabled = false;
-    btn.textContent = 'Enviar agora';
-    alert('Não foi possível enviar pelo site. Use o botão de WhatsApp acima.');
+    console.warn('E-mail FormSubmit indisponível:', err);
   }
+
+  window.open(waUrl, '_blank');
+  form.reset();
+  btn.textContent = 'Enviado!';
+  setTimeout(function(){ btn.disabled = false; btn.textContent = 'Enviar agora'; }, 2500);
 });
 </script>
 </body>
