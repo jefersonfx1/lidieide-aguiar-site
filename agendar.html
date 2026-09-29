@@ -104,7 +104,9 @@ Agendar via WhatsApp
 <div class="bg-white/95 backdrop-blur rounded-3xl p-6 sm:p-8 shadow-sm border border-purple-50">
 <h2 class="font-semibold text-lg text-primary mb-2">Preencha seus dados</h2>
 <p class="text-sm text-muted mb-6">Envie seus dados para entrarmos em contato e agendar sua sessão.</p>
-<form id="booking-form" class="space-y-4">
+<form id="booking-form" class="space-y-4" action="https://formsubmit.co/lidieide@hotmail.com" method="POST">
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_next" value="https://lidieideaguiar.netlify.app/agendar.html?enviado=1">
 <input type="hidden" name="_subject" value="Novo contato do site — Agendamento Lidieide Aguiar">
 <input type="hidden" name="_template" value="table">
 <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
@@ -153,42 +155,21 @@ Agendar via WhatsApp
 </footer>
 
 <script>
-document.getElementById('booking-form').addEventListener('submit', async function(e) {
-  e.preventDefault();
-  var form = this;
-  var btn = form.querySelector('button[type="submit"]');
-  var nome = form.nome.value.trim();
-  var whatsapp = form.whatsapp.value.trim();
-  var motivo = form.motivo.value.trim() || 'Não informado';
-  if (!nome || !whatsapp) return;
-
-  btn.disabled = true;
-  btn.textContent = 'Enviando...';
-
-  var msg = 'Olá! Gostaria de agendar uma sessão.%0A%0A*Nome:* ' + encodeURIComponent(nome) + '%0A*WhatsApp:* ' + encodeURIComponent(whatsapp) + '%0A*Motivo:* ' + encodeURIComponent(motivo);
-  var waUrl = 'https://wa.me/5561995581985?text=' + msg;
-
-  try {
-    await fetch('https://formsubmit.co/ajax/lidieide@hotmail.com', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify({
-        Nome: nome,
-        WhatsApp: whatsapp,
-        Motivo: motivo,
-        _subject: 'Novo contato do site — Agendamento Lidieide Aguiar',
-        _template: 'table'
-      })
-    });
-  } catch (err) {
-    console.warn('E-mail FormSubmit indisponível:', err);
+(function() {
+  var params = new URLSearchParams(window.location.search);
+  if (params.get('enviado') === '1') {
+    var form = document.getElementById('booking-form');
+    if (form) {
+      var box = document.createElement('div');
+      box.className = 'mb-4 p-4 rounded-xl bg-green-50 border border-green-200 text-green-800 text-sm';
+      box.textContent = 'Mensagem enviada com sucesso! Em breve você receberá um retorno.';
+      form.parentNode.insertBefore(box, form);
+    }
+    if (window.history && window.history.replaceState) {
+      window.history.replaceState({}, '', window.location.pathname);
+    }
   }
-
-  window.open(waUrl, '_blank');
-  form.reset();
-  btn.textContent = 'Enviado!';
-  setTimeout(function(){ btn.disabled = false; btn.textContent = 'Enviar agora'; }, 2500);
-});
+})();
 </script>
 </body>
 </html>
