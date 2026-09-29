@@ -104,12 +104,11 @@ Agendar via WhatsApp
 <div class="bg-white/95 backdrop-blur rounded-3xl p-6 sm:p-8 shadow-sm border border-purple-50">
 <h2 class="font-semibold text-lg text-primary mb-2">Preencha seus dados</h2>
 <p class="text-sm text-muted mb-6">Envie seus dados para entrarmos em contato e agendar sua sessão.</p>
-<form id="booking-form" class="space-y-4" action="https://formsubmit.co/lidieide@hotmail.com" method="POST">
-<input type="hidden" name="_captcha" value="false">
-<input type="hidden" name="_next" value="https://lidieideaguiar.netlify.app/agendar.html?enviado=1">
-<input type="hidden" name="_subject" value="Novo contato do site — Agendamento Lidieide Aguiar">
-<input type="hidden" name="_template" value="table">
-<input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+<form id="booking-form" class="space-y-4" name="agendamento" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/agendar.html?enviado=1">
+<input type="hidden" name="form-name" value="agendamento">
+<p class="hidden" aria-hidden="true" style="display:none">
+<label>Não preencha: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+</p>
 <div>
 <label class="block text-sm font-medium mb-1 text-text">Nome completo</label>
 <input type="text" name="nome" required class="w-full px-4 py-3 rounded-xl border border-purple-100 focus:outline-none focus:ring-2 focus:ring-primary/40 transition" placeholder="Seu nome">
