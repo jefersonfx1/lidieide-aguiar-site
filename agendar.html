@@ -104,7 +104,7 @@ Agendar via WhatsApp
 <div class="bg-white/95 backdrop-blur rounded-3xl p-6 sm:p-8 shadow-sm border border-purple-50">
 <h2 class="font-semibold text-lg text-primary mb-2">Preencha seus dados</h2>
 <p class="text-sm text-muted mb-6">Envie seus dados para entrarmos em contato e agendar sua sessão.</p>
-<form id="booking-form" class="space-y-4" name="agendamento" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/agendar.html?enviado=1">
+<form id="booking-form" class="space-y-4" name="agendamento" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/obrigado.html">
 <input type="hidden" name="form-name" value="agendamento">
 <p class="hidden" aria-hidden="true" style="display:none">
 <label>Não preencha: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
@@ -152,23 +152,5 @@ Agendar via WhatsApp
 <div class="border-t border-purple-700 pt-6 text-center text-sm text-purple-300">© 2026 Lidieide Aguiar. Todos os direitos reservados.</div>
 </div>
 </footer>
-
-<script>
-(function() {
-  var params = new URLSearchParams(window.location.search);
-  if (params.get('enviado') === '1') {
-    var form = document.getElementById('booking-form');
-    if (form) {
-      var box = document.createElement('div');
-      box.className = 'mb-4 p-4 rounded-xl bg-green-50 border border-green-200 text-green-800 text-sm';
-      box.textContent = 'Mensagem enviada com sucesso! Em breve você receberá um retorno.';
-      form.parentNode.insertBefore(box, form);
-    }
-    if (window.history && window.history.replaceState) {
-      window.history.replaceState({}, '', window.location.pathname);
-    }
-  }
-})();
-</script>
 </body>
 </html>
